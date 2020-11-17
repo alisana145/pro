@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://www.dukelearntoprogram.com//course1/common/js/image/SimpleImage.js"></script>
+        <style>
+            canvas{
+          border:2px solid lightgray;
+          width:300px;
+          height:175px;
+        }
+        .main{
+            margin-left: 200px; /* Same as the width of the sidenav */
+            font-size: 20px; /* Increased text to enable scrolling */
+            padding: 0px 10px;
+        }
+        </style>
+    </head>
+    <body>
+        <div class="main">
+        <h1>SELL THE FURNITURE</h1>
+        <script>
+            function upload(){
+                var filename= document.getElementById("finput");
+                var img = new SimpleImage(filename);
+                var canvas = document.getElementById("can");
+                img.drawTo(canvas);
+            }
+        </script>
+        <canvas id="can"></canvas>
+        <p>
+        <input type="file" multiple="false" accept="image/*" id="finput" onchange="upload()">
+        </p>
+        <form action="/action_page.php">
+            <label for="ftype">Choose a furniture type:</label>
+            <select name="ftype" id="ftype">
+              <option value="chair">Chair</option>
+              <option value="table">Table</option>
+              <option value="homedecore">Home Decore</option>
+              <option value="cuboard">Cubboard</option>
+            </select>
+        </form><br>
+        <form action="/action_page.php">
+            <label for="rentsell">Select rent or sell:</label>
+            <select name="rentsell" id="rentsell">
+              <option value="sell">sell</option>
+              <option value="rent">rent</option>
+            </select>
+        </form><br>
+        <form>
+            <label for="amount">Amount:</label>
+            <textarea id="amount" name="amount" rows="1" cols="6">
+            </textarea>
+            </form>
+            <h3>Address</h3>
+            <form>
+                <label for="address">House number:</label>
+                <textarea id="address" name="address" rows="2" cols="50"></textarea><br><br>
+                <label for="area">Area:</label>
+                <textarea id="area" name="area" rows="1" cols="50"></textarea><br>
+                <label for="pin">Pincode:</label>
+                <textarea id="pin" name="pin" rows="1" cols="6"></textarea>
+            
+                </form>
+        </div>
+    </body>
+</html>
